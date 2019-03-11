@@ -1,6 +1,4 @@
 # Author: Tomas Cespedes
-# Worked with: Taylor Digilio and Cooper Parker
-# Date: 2/4/19
 
 from Project1.utils.framework import Agent
 from Project1.utils.structures import PriorityQueue, SearchTree

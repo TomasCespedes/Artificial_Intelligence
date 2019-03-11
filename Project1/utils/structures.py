@@ -1,7 +1,7 @@
 from collections import deque
 from heapq import *
 
-
+# Class for Queue structure
 class Queue(object):
 
     # Initialize an empty queue
@@ -20,7 +20,7 @@ class Queue(object):
     def pop(self):
         return self.items.popleft()
 
-
+# Class for priority queue structure
 class PriorityQueue(object):
 
     # Initialize an empty priority queue
@@ -52,6 +52,7 @@ class PriorityQueue(object):
                 return item
 
 
+# Class for Search Tree structure
 class SearchTree(object):
 
     # Initialize a search tree with a root node
