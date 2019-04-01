@@ -1,3 +1,5 @@
+from collections import deque
+
 from Project1.utils.framework import Puzzle
 from copy import deepcopy
 
@@ -36,12 +38,19 @@ SOLVEABLE_BOARDS = [
         [0, 1, 1, 0, 1],
         [1, 1, 0, 1, 1],
         [0, 0, 1, 1, 1]
+    ],
+    # Board 5 (5 moves)
+    [
+        [1, 1, 0, 1, 1],
+        [1, 0, 1, 0, 1],
+        [0, 1, 1, 1, 0],
+        [1, 0, 1, 0, 1],
+        [1, 1, 0, 1, 1]
     ]
 ]
 
-
 # Set up the game board
-LIGHTSOUT = SOLVEABLE_BOARDS[3]
+LIGHTSOUT = SOLVEABLE_BOARDS[0]
 
 # Can create the moves list once here
 # To save time since the moves list never changes
@@ -80,13 +89,18 @@ class Lightsout(Puzzle):
         conflicts = 0
 
         # Go through every cell
-        for dr, dc in MOVES:
-            # If it is equal to 1 (light is on),
-            # count it as a conflict
+        for (dr, dc) in MOVES:
             if self.grid[dr][dc] == 1:
                 conflicts += 1
 
-        # Return the number of conflict
+        # Worst case is 12 moves so cap it
+        # Add this only for iterative deepening a*
+        # This is to limit the number of conflicts since the max
+        # Number of moves is 12 (not best solution but solves our issue)
+        # Need a different heuristic to solve the issue which calculates number of moves
+        #if conflicts >= 13:
+        #    conflicts = 12
+
         return conflicts
 
     # Every coordinate is a possible move
@@ -130,6 +144,7 @@ class Lightsout(Puzzle):
         # Check if there is something to switch to the right
         if (dc + 1) <= SIZE - 1:
             new_grid[dr][dc + 1] ^= 1
+
 
     # Display the board every turn
     def display(self):
