@@ -1,7 +1,7 @@
 # Author: Tomas Cespedes
 
-from Project1.utils.framework import Agent
-from Project1.utils.structures import PriorityQueue, SearchTree
+from LightsOutPuzzle.utils.framework import Agent
+from LightsOutPuzzle.utils.structures import PriorityQueue, SearchTree
 
 
 class AStarAgent(Agent):

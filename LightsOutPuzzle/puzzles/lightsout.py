@@ -1,6 +1,5 @@
 from collections import deque
-
-from Project1.utils.framework import Puzzle
+from LightsOutPuzzle.utils.framework import Puzzle
 from copy import deepcopy
 
 # Set up the game board size

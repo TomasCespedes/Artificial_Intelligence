@@ -1,5 +1,5 @@
-from solving.utils.framework import Agent
-from solving.utils.structures import Queue, SearchTree
+from LightsOutPuzzle.utils.framework import Agent
+from LightsOutPuzzle.utils.structures import Queue, SearchTree
 
 
 class BFSAgent(Agent):

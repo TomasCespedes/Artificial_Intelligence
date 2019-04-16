@@ -1,6 +1,6 @@
 # Author: Tomas Cespedes
 from collections import deque
-from Project1.utils.framework import Agent
+from LightsOutPuzzle.utils.framework import Agent
 
 
 class IterativeDeepeningAgent(Agent):

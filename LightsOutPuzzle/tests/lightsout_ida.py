@@ -1,5 +1,5 @@
-from Project1.puzzles.lightsout import Lightsout
-from Project1.agents.iterativedeepening_astar import IterativeAStarAgent
+from LightsOutPuzzle.puzzles.lightsout import Lightsout
+from LightsOutPuzzle.agents.iterativedeepening_astar import IterativeAStarAgent
 
 # Initialize the puzzle
 puzzle = Lightsout()

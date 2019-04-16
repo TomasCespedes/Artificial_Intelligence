@@ -1,5 +1,5 @@
-from Project1.puzzles.lightsout import Lightsout
-from Project1.agents.human import HumanPlayer
+from LightsOutPuzzle.puzzles.lightsout import Lightsout
+from LightsOutPuzzle.agents.human import HumanPlayer
 
 # Initialize the human player
 player = HumanPlayer()

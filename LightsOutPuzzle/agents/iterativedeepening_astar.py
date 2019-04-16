@@ -4,7 +4,7 @@ from math import inf
 
 import sys
 
-from Project1.utils.framework import Agent
+from LightsOutPuzzle.utils.framework import Agent
 
 NOT_FOUND = None
 

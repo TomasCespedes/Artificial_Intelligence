@@ -1,4 +1,4 @@
-from playing.utils.framework import Player
+from LightsOutPuzzle.utils.framework import Player
 
 
 # Class for the human player

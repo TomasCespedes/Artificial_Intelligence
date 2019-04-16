@@ -114,3 +114,14 @@ class Agent(object):
 
         # If we reach here, puzzle is solved.
         print("Puzzle solved in", moves, "moves.")
+
+
+# Superclass for all players
+class Player(object):
+    # Return whether this player wants to maximize utility
+    def maximizes(self):
+        raise NotImplementedError
+
+    # Return the move this player wants to make
+    def move(self, game):
+        raise NotImplementedError
