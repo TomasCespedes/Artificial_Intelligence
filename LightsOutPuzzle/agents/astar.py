@@ -20,6 +20,13 @@ class AStarAgent(Agent):
 
     # Use breadth-first search to plan moves
     def astar(self, puzzle):
+        """
+        A-star search. Creates a SearchTree, set, and a priority queue. We push
+        each puzzle onto the frontier with a heuristic. Search through each possible
+        move until we find our answer.
+        :param puzzle: takes a puzzle board
+        :return: Nothing
+        """
 
         tree = SearchTree(puzzle)
 

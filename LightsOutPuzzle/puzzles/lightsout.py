@@ -97,6 +97,8 @@ class Lightsout(Puzzle):
         # This is to limit the number of conflicts since the max
         # Number of moves is 12 (not best solution but solves our issue)
         # Need a different heuristic to solve the issue which calculates number of moves
+        # however the heuristic would need to know what the max number of moves is which
+        # defeats the purpose of having a heuristic.
         #if conflicts >= 13:
         #    conflicts = 12
 
@@ -108,6 +110,10 @@ class Lightsout(Puzzle):
         return MOVES
 
     def neighbor(self, move):
+        """
+        :param move: a move in which the player wants to make.
+        :return: all the neighbors of that move.
+        """
         # Get the row number and column number from the move
         (dr, dc) = move
 
@@ -125,6 +131,15 @@ class Lightsout(Puzzle):
     # 0 ^= 1  turns a 0 into a 1
     # 1 ^= 1 turns a 1 into a 0
     def switch(self, new_grid, dr, dc):
+        """
+        Change the game board states accordingly to the players moves. Since
+        we have the board labels as 0s and 1s, we can use bitwise multiplication
+        to change states easily.
+        :param new_grid: a puzzle board grid in some state.
+        :param dr: move in x direction.
+        :param dc: move in y direction.
+        :return: None.
+        """
         # Switch the current spot
         new_grid[dr][dc] ^= 1
 
@@ -147,6 +162,10 @@ class Lightsout(Puzzle):
 
     # Display the board every turn
     def display(self):
+        """
+        Display the board.
+        :return: None.
+        """
         for r in range(SIZE):
             for c in range(SIZE):
                 # If it is a 0, print an "off" tile

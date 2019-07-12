@@ -6,18 +6,27 @@ from LightsOutPuzzle.utils.framework import Agent
 class IterativeDeepeningAgent(Agent):
 
     def __init__(self):
-        # Use a deque
         self.moves = list()
         self.cutoff = 50
 
     # Return the move this agent wants to make
     def move(self, puzzle):
+        """
+        Plan the move the agent wants to make.
+        :param puzzle: a puzzle in some state.
+        :return: the left most move (the best move to make)
+        """
         # Plan a move if necessary
         if not self.moves:
             self.moves = self.iterative_deepening_search(puzzle)
         return self.moves.popleft()
 
     def iterative_deepening_search(self, puzzle):
+        """
+        Calls recursive depth limited search to convert to iterative deepening search.
+        :param puzzle: a puzzle in some state.
+        :return: result if we find a solution, otherwise None.
+        """
         for depth in range(self.cutoff):
             result = self.recursive_dls(deque(), puzzle, depth)
             if result != self.cutoff:
@@ -25,6 +34,13 @@ class IterativeDeepeningAgent(Agent):
         return None
 
     def recursive_dls(self, moves_list, puzzle, limit):
+        """
+        :param moves_list: a list of all possible moves.
+        :param puzzle: a puzzle in whichever state it is currently in.
+        :param limit:  a limit in which the user stops at.
+        :return: Ideally, a result in which the planned move is better than previous move. If puzzle is solved,
+        we return the moves list that gets us the best result.
+        """
         # If the puzzle is solved
         if puzzle.solved():
             # return list of moves

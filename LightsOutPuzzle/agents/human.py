@@ -10,6 +10,12 @@ class HumanPlayer(Player):
 
     # Define the move the player makes
     def move(self, game):
+        """
+        This is the human agent. No algorithm is being ran, it
+        presents the users with all possible moves.
+        :param game: a puzzle game in which is being played.
+        :return: the players choice for a move.
+        """
         # Get all the possible moves
         moves = game.moves()
         # Print all the possible moves

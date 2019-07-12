@@ -8,7 +8,11 @@ class BFSAgent(Agent):
         self.moves = dict()
 
     def move(self, puzzle):
-
+        """
+        Plan a move if necessary.
+        :param puzzle: a puzzle board. If the puzzle is not in the moves, then run bfs.
+        :return: a list of moves based on that specific puzzle
+        """
         # Plan a move if necessary
         if puzzle not in self.moves:
             self.bfs(puzzle)
@@ -17,6 +21,11 @@ class BFSAgent(Agent):
 
     # Use Breadth First Search to plan moves
     def bfs(self, puzzle):
+        """
+        Breadth-First-Search.
+        :param puzzle:
+        :return: Only if the puzzle is solved, otherwise quit. 
+        """
 
         tree = SearchTree(puzzle)
 

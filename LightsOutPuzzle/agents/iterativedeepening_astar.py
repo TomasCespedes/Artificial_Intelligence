@@ -12,7 +12,6 @@ NOT_FOUND = None
 class IterativeAStarAgent(Agent):
 
     def __init__(self):
-        # Use a deque
         self.moves = list()
 
     # Return the move this agent wants to make
@@ -24,6 +23,11 @@ class IterativeAStarAgent(Agent):
         return self.moves.popleft()
 
     def iterative_deepening_search(self, puzzle):
+        """
+        Run iterative deepening search combined with A-star.
+        :param puzzle: a puzzle in some state.
+        :return: a result which is our ideal move if successful, otherwise None.
+        """
         threshold = puzzle.heuristic()
         path = deque()
 
@@ -42,14 +46,17 @@ class IterativeAStarAgent(Agent):
             threshold = result
 
     def recursive_dls(self, moves_list, puzzle, current_node_cost,  threshold):
+        """
+        :param moves_list: a list of moves
+        :param puzzle: a puzzle in some state
+        :param current_node_cost: the cost it takes to get to current node
+        :param threshold: a limit in which our puzzle should not go past.
+        :return: Cost if it is greater than our threshold, a list of moves if
+        our agent is successful, minimum if we fail, or a result if our agent is still
+        trying to solve the puzzle.
+        """
         # Update the cost
-
         cost = current_node_cost + puzzle.heuristic()
-
-        # print("Current: " + str(current_node_cost))
-        #print("Puzzle: " + str(puzzle.heuristic()))
-        #print("Cost: " + str(cost))
-        #print("Threshold: " + str(threshold))
 
         # If our cost is greater than our threshold
         if cost > threshold:

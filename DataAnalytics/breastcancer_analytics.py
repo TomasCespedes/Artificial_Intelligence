@@ -140,7 +140,6 @@ print("The default setting of the weights is uniform. That means all the points 
 
 
 # Generate a plot to show how these parameters affects the score of your classifier.
-# Try [1, 3, 5, 7, 9] neighbors and plot them on the x-axis, with the corresponding scores on the y-axis.
 # Plot two curves (one with distance weighting, one without) and include a legend to show which is which.
 clf_scores = list()
 clfd_scores = list()

@@ -83,6 +83,12 @@ class Agent(object):
 
     # Watch this agent solve a puzzle
     def solve(self, puzzle, interval=0.25):
+        """
+        Solve the puzzle.
+        :param puzzle: a puzzle board in some state.
+        :param interval: Interval for easier printing, tells computer to wait .25 seconds.
+        :return: Nothing.
+        """
         # Tell user puzzle is being solved
         print("solving puzzle:")
         # Display the puzzle
