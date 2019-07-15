@@ -1,6 +1,5 @@
-# Authors: Taylor Digilio and Tomas Cespedes
+# Authors: Tomas Cespedes
 # Citations: https://docs.python.org/3/library/pathlib.html
-# https://www.kaggle.com/crawford/monkey-classifier-cnn-xception-0-90-acc for data generator
 
 from sklearn.ensemble import RandomForestClassifier
 import numpy as np
@@ -111,7 +110,8 @@ clf.fit(train_features, train_labels)
 
 # Looking for accuracy score.
 from sklearn.metrics import accuracy_score
+# predict our features
 preds = clf.predict(test_features)
 
-# Accuracy of 0.6066176470588235
+# Print the Accuracy score
 print("Accuracy", accuracy_score(test_labels, preds))
